@@ -10,4 +10,11 @@ contract SimpleStorage {
     string favoriteNumberInText = "69";
     // address myAddress = 0xaB1B720;
     bytes32 favorityBytes32 = "cat";
+
+    // favoriteNumber gets initialized to 0 if no value
+    uint256 herFavoriteNumber; // 0
+
+    function store(uint256 _herFavoriteNumber) public {
+        herFavoriteNumber = _herFavoriteNumber;
+    }
 }
