@@ -9,4 +9,8 @@ contract HelloWeb3 {
     uint256 public _number2 = 2 ** 2;
     uint256 public _number3 = 7 % 2;
     bool public _numberbool = _number2 > _number3;
+
+    address public _address = 0x123;
+    address payable public _address1 = payable(_address); // _address 轉帳給 _address1
+    uint256 public balance = _address1.balance;
 }
