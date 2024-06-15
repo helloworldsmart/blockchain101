@@ -4,6 +4,7 @@ pragma solidity 0.8.19; // solidity versions
 contract SimpleStorage {
     // favoriteNumber gets initialized to 0 if no value
     uint256 public myFavoriteNumber; // 0
+    uint256 favoriteNumber;
 
     // uint256[] listOfFavoriteNumbers;
     struct Person {
@@ -19,6 +20,9 @@ contract SimpleStorage {
     // dynamic array
     Person[] public listOfPeople; // []
 
+    // chelsea -> 232
+    mapping(string => uint256) public nameToFavoriteNumber;
+
     function store(uint256 _favoriteNumber) public {
         myFavoriteNumber = _favoriteNumber;
     }
@@ -30,5 +34,6 @@ contract SimpleStorage {
 
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         listOfPeople.push(Person(_favoriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
